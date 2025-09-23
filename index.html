@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Ahlam</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Animation étoiles flottantes */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: float 8s linear infinite;
+    }
+    @keyframes float {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="relative bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-x-hidden">
+
+    <!-- Canvas pour étoiles -->
+  <canvas id="stars-canvas"></canvas>
+  
+  <!-- Étoiles -->
+  <div id="stars"></div>
+  <script>
+    const starsContainer = document.getElementById("stars");
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.animationDuration = 5 + Math.random() * 10 + "s";
+      starsContainer.appendChild(star);
+    }
+  </script>
+
+  <!-- Header -->
+  <header class="w-full fixed top-0 left-0 z-50 bg-gray-900/30 backdrop-blur-md border-b border-gray-800/50 shadow-lg">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="text-2xl font-bold tracking-wide text-blue-400">Ahlam</div>
+      <div class="flex space-x-8 text-lg font-medium">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-4xl md:text-6xl font-extrabold">
+      Hello, I'm <span class="text-blue-400">Ahlam</span>
+    </h2>
+    <p class="mt-4 text-lg text-gray-300 max-w-2xl">
+      Passionnée par le <span class="text-blue-400">Fullstack Development</span>, 
+      le <span class="text-purple-400">DevOps</span>, le <span class="text-blue-300">Cloud</span> et 
+      l’<span class="text-indigo-400">Automatisation</span>.  
+      Je conçois des applications performantes, scalables et élégantes.
+    </p>
+    <div class="mt-6 flex space-x-4">
+      <a href="#portfolio" 
+        class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-bold shadow-lg hover:scale-105 transition">
+        🚀 See my work
+      </a>
+      <a href="#contact" 
+        class="px-8 py-3 border border-gray-400 hover:border-blue-400 rounded-full text-white font-bold shadow-lg hover:scale-105 transition">
+        ✉ Contact me
+       </a>
+    </div>
+  </section>
+  <!-- Hero Section Social Buttons -->
+<div class="mt-8 flex flex-col items-center space-y-4">
+    <div class="flex space-x-4">
+      <a href="https://github.com/Ahlam-bi" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-6 h-6">
+      </a>
+      <a href="https://www.linkedin.com/in/ahlam-ben-imran-1a4271242" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 transition">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="w-6 h-6">
+      </a>
+      <a href="mailto:benimran.ahlam@etu.uae.ac.ma" class="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 hover:bg-red-500 transition">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Gmail" class="w-6 h-6">
+      </a>
+    </div>
+
+  <!-- Bouton téléchargement CV -->
+  <a href="assets/Ahlam_Ben_Imran_CV_Fr.pdf" download class="mt-4 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-bold shadow-lg hover:scale-105 transition">
+    Download CV
+  </a>
+</div>
+ 
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 bg-gray-900/70 backdrop-blur-sm">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About <span class="text-blue-400">Me</span></h2>
+    <p class="text-center text-gray-300 max-w-3xl mx-auto mb-12">
+      Je suis une Software Engineer passionnée par le développement Fullstack, le DevOps et les solutions Cloud.  
+      Voici un aperçu de mes compétences clés :
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Exemple d’une carte -->
+      <div class="bg-gray-800/80 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-4 text-blue-400">Développement Web</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li><b>Front-End:</b> HTML5, CSS3, Tailwind, React</li>
+          <li><b>Back-End:</b> PHP, Java, Spring Boot</li>
+          <li><b>Langages:</b> C / C++, R</li>
+        </ul>
+      </div>
+
+      <!-- Systèmes et Réseaux -->
+      <div class="bg-gray-800/80 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-4 text-blue-400">Systèmes & Réseaux</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li><b>Admin:</b> Linux, Windows, Scripts Shell</li>
+          <li><b>Réseaux:</b> IP, Ethernet, Subnetting, Routage, Sans fil</li>
+          <li><b>Cloud:</b> Virtualisation, Déploiement Cloud</li>
+          <li><b>Sécurité:</b> Cryptographie, Sécurisation systèmes</li>
+        </ul>
+      </div>
+
+      <!-- Bases de données -->
+      <div class="bg-gray-800/80 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-4 text-blue-400">Bases de données</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li><b>Modélisation:</b> UML, Orienté Objet</li>
+          <li><b>SGBD:</b> MySQL, PostgreSQL, PL/SQL, Oracle</li>
+        </ul>
+      </div>
+
+      <!-- Outils & Technologies -->
+      <div class="bg-gray-800/80 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-4 text-blue-400">Outils & Technologies</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li>Git, GitHub, GitLab</li>
+          <li>Postman, Figma</li>
+          <li>Jira (Scrum)</li>
+        </ul>
+      </div>
+
+      <!-- DevOps -->
+      <div class="bg-gray-800/80 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-4 text-blue-400">DevOps</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li>Docker</li>
+          <li>CI/CD</li>
+          <li>Azure</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Portfolio Section ===== -->
+<section id="portfolio" class="py-20 px-6 bg-gray-900/70 backdrop-blur-sm">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      Portfolio <span class="text-blue-400">Projects</span>
+    </h2>
+
+    <!-- Professional Experiences -->
+    <h3 class="text-2xl font-semibold mb-6 text-blue-300">💼 Professional Experiences</h3>
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- HSE Project -->
+      <div class="bg-gray-800/70 p-6 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition">
+        <h4 class="text-xl font-bold mb-2">Application Web de Gestion des Processus HSE</h4>
+        <p class="text-sm text-gray-400 mb-2">Tanger Med Engineering, Tanger | PFA | Juillet - Septembre 2025</p>
+        <p class="text-gray-300 mb-3">
+          Développement <strong>full-stack</strong> (Angular, NestJS, PostgreSQL) d’une application web pour la gestion des processus <strong>HSE</strong>.
+          <br>Dockerisation complète (front/back/DB) et déploiement sur <strong>Azure App Service</strong>.
+        </p>
+      </div>
+
+      <!-- APDN Internship -->
+      <div class="bg-gray-800/70 p-6 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition">
+        <h4 class="text-xl font-bold mb-2">Stage d’Observation – Développement Numérique</h4>
+        <p class="text-sm text-gray-400 mb-2">APDN, Tanger | Juillet - Août 2024</p>
+        <p class="text-gray-300 mb-3">
+          Participation à la conception de solutions logicielles pour des projets d’entreprise.
+          Contribution aux <strong>revues de code en équipe</strong>, développement de l’esprit critique et de l’adaptabilité.
+        </p>
+      </div>
+    </div>
+
+    <!-- Academic Projects -->
+    <h3 class="text-2xl font-semibold mb-6 text-purple-300">🎓 Academic Projects</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- MIRAI Project -->
+      <div class="bg-gray-800/70 p-6 rounded-2xl shadow-lg hover:shadow-purple-500/20 transition">
+        <h4 class="text-xl font-bold mb-2">MIRAI – RH & Gestion des Stages</h4>
+        <p class="text-sm text-gray-400 mb-2">React.js, Spring Boot, PostgreSQL, Docker, Git</p>
+        <p class="text-gray-300">
+          Système de gestion RH pour <strong>stagiaires, superviseurs et responsables</strong>.
+          Intégration d’<strong>IA</strong> pour l’évaluation et outils d’organisation optimisés.
+        </p>
+      </div>
+
+      <!-- School Management -->
+      <div class="bg-gray-800/70 p-6 rounded-2xl shadow-lg hover:shadow-purple-500/20 transition">
+        <h4 class="text-xl font-bold mb-2">Système de Gestion d’une École</h4>
+        <p class="text-sm text-gray-400 mb-2">Java, JavaFX, JDBC, MySQL</p>
+        <p class="text-gray-300">
+          Application scolaire pour la gestion des <strong>étudiants, professeurs, modules et inscriptions</strong>.
+          Basée sur le modèle <strong>MVC</strong>, avec recherche avancée et notifications.
+        </p>
+      </div>
+
+      <!-- GeniusLab -->
+      <div class="bg-gray-800/70 p-6 rounded-2xl shadow-lg hover:shadow-purple-500/20 transition">
+        <h4 class="text-xl font-bold mb-2">GeniusLab – Plateforme Activités Enfants</h4>
+        <p class="text-sm text-gray-400 mb-2">Laravel, Vue.js, PostgreSQL, Docker, Git</p>
+        <p class="text-gray-300">
+          Plateforme web permettant aux <strong>parents d’inscrire leurs enfants</strong> à des activités.
+          Digitalisation et simplification du processus d’inscription et de gestion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6 bg-gray-900/70 backdrop-blur-sm">
+    <h2 class="text-4xl font-bold text-center mb-10">Contact <span class="text-blue-400">Me</span></h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      <div class="space-y-6">
+        <p class="text-gray-300">Envie de collaborer sur un projet ? N’hésitez pas à me contacter :</p>
+        <div class="space-y-4">
+          <p>📧 benimran.ahlam@etu.uae.ac.ma</p>
+          <p>📞 +212 6 54 16 96 38</p>
+          <p>📍 Tangier, Morocco</p>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/xrbyzrdn" method="POST" class="bg-gray-800 rounded-xl p-8 shadow-lg space-y-6">
+        <input type="text" name="name" placeholder="Your name" class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:border-blue-400 outline-none">
+        <input type="email" name="email" placeholder="Your email" class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:border-blue-400 outline-none">
+        <textarea name="message" placeholder="Your message..." rows="5" class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:border-blue-400 outline-none"></textarea>
+        <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow-lg">✈ Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+    © 2025 Ahlam — Fullstack | DevOps | Cloud | Automation
+  </footer>
+
+</body>
+</html>
